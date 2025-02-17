@@ -13,18 +13,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-}
-a:hover {
-  color: #535bf2;
-}
-
 body {
   margin: 0;
   display: flex;
-  place-items: center;
+
   min-width: 320px;
   min-height: 100vh;
 }
@@ -33,4 +25,23 @@ body {
   padding: 0;
   background-color: #1e2030;
   border-bottom: solid rgb(128, 135, 162);
+}
+
+.article-img {
+  width: 25%;
+}
+
+.nav-list {
+  width: 100%;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  justify-content: space-around;
+  background-color: rgb(128, 135, 162);
+  color: #1e2030;
+}
+
+.nav-list > a {
+  color: #1e2030;
 }

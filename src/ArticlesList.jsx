@@ -23,7 +23,8 @@ function ArticlesList() {
       {articleList.map((article) => {
         return (
           <ArticleListEntry
-            key={article.title}
+            id={article.article_id}
+            key={article.article_id}
             title={article.title}
             topic={article.topic}
             author={article.author}
