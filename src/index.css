@@ -27,6 +27,11 @@ body {
   border-bottom: solid rgb(128, 135, 162);
 }
 
+.article-list-item > img {
+  margin-top: 1em;
+  width: 50%;
+}
+
 .article-img {
   width: 25%;
 }

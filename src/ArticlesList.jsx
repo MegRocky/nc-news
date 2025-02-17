@@ -31,6 +31,7 @@ function ArticlesList() {
             votes={article.votes}
             comments={article.comment_count}
             posted={article.created_at}
+            img={article.article_img_url}
           ></ArticleListEntry>
         );
       })}
