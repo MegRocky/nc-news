@@ -6,6 +6,7 @@ import CommentForm from "./CommentForm";
 function CommentList({ article }) {
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState("");
+  const [currentUser, setCurrentUser] = useState("jessjelly");
   useEffect(() => {
     getCommentsByArticle(article)
       .then((comments) => {
@@ -25,10 +26,12 @@ function CommentList({ article }) {
         return (
           <CommentCard
             key={comment.comment_id}
+            id={comment.comment_id}
             author={comment.author}
             votes={comment.votes}
             posted={comment.created_at}
             body={comment.body}
+            currentUser={currentUser}
           />
         );
       })}
