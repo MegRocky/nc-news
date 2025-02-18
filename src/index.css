@@ -110,7 +110,10 @@ article {
   max-width: 5em;
   grid-column: 1;
 }
-
+/* optimistically hide comment card on delete */
+.hide {
+  display: none;
+}
 /* horizontal vote buttons */
 .horizontal-vote-buttons {
   padding-inline: 3em;
