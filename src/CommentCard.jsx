@@ -15,8 +15,8 @@ function CommentCard({ author, votes, posted, body }) {
         <img className="avatar-img" src={commentUser.avatar_url} />
         <p className="comment-username">{author}</p>
         <p className="comment-body">{body}</p>
-        <p className="commentVotes">{votes}</p>
-        <p>{posted}</p>
+        <p className="comment-votes">{votes}</p>
+        <p className="comment-date">{posted.split("T")[0]}</p>
       </section>
     </>
   );

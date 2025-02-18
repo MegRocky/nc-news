@@ -98,10 +98,14 @@ article {
 .comment-username {
   grid-column: 1;
 }
-.commentVotes {
+.comment-votes {
   grid-column: 3;
 }
 
+.comment-date {
+  grid-column: 2;
+  grid-row: 2;
+}
 .avatar-img {
   max-width: 5em;
   grid-column: 1;
