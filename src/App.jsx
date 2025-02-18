@@ -12,6 +12,7 @@ function App() {
         <Route path="/" element={<ArticlesList />} />
         <Route path="/articles" element={<ArticlesList />} />
         <Route path="/articles/:article_id" element={<FullArticle />} />
+        <Route path="/topics/:topic" element={<ArticlesList />} />
       </Routes>
     </>
   );
