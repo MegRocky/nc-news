@@ -15,3 +15,15 @@ export const getArticle = (articleId) => {
     return res.data.article;
   });
 };
+
+export const getCommentsByArticle = (articleId) => {
+  return ncNewsApi.get(`/articles/${articleId}/comments`).then((res) => {
+    return res.data.comments;
+  });
+};
+
+export const getUsersByUserName = (username) => {
+  return ncNewsApi.get(`/users/${username}`).then((res) => {
+    return res.data.user;
+  });
+};

@@ -80,14 +80,40 @@ body {
 .article-img {
   width: 25%;
 }
+article {
+  padding: 1em;
+}
+
+/* comment card /w grid */
+.comment-card {
+  display: grid;
+  grid-template-columns: 0.25fr 1fr 0.5fr;
+  background-color: #303446;
+}
+.comment-body {
+  grid-column: span 2;
+  grid-column-start: 2;
+  grid-row: 1;
+}
+.comment-username {
+  grid-column: 1;
+}
+.commentVotes {
+  grid-column: 3;
+}
+
+.avatar-img {
+  max-width: 5em;
+  grid-column: 1;
+}
+
 /* nav */
 .nc-news-wordmark {
   font-family: "Monofett", serif;
 }
 .nav-list {
   display: flex;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+
   padding: 1rem;
   list-style: none;
   justify-content: space-around;
@@ -99,6 +125,7 @@ body {
   background-color: rgba(255, 255, 255, 0.87);
   border-radius: 1em;
   padding: 0.5em;
+  padding-bottom: 1em;
   text-decoration: underline;
 }
 

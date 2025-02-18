@@ -1,12 +1,13 @@
 import { useParams } from "react-router-dom";
 import { getArticle } from "./api";
 import { useState, useEffect } from "react";
+import CommentList from "./CommentList";
 
 function FullArticle() {
   const articleId = useParams().article_id;
   const [currentArticle, setCurrentArticle] = useState({});
   const [isLoading, setIsLoading] = useState(true);
-  console.log(articleId);
+
   useEffect(() => {
     getArticle(articleId)
       .then((article) => {
@@ -29,6 +30,7 @@ function FullArticle() {
       <img className="article-img" src={currentArticle.article_img_url} />
 
       <article>{currentArticle.body}</article>
+      <CommentList article={articleId} />
     </>
   );
 }
