@@ -23,15 +23,17 @@ function Header() {
           }}
         >
           Topics ↓
-          {categoryDropdownY
-            ? currentTopics.map((topic) => {
-                return (
-                  <Link to={`topics/${topic.slug} `} key={topic.slug}>
-                    {topic.slug}{" "}
-                  </Link>
-                );
-              })
-            : ""}
+          <ul>
+            {categoryDropdownY
+              ? currentTopics.map((topic) => {
+                  return (
+                    <Link to={`topics/${topic.slug} `} key={topic.slug}>
+                      <li className="topic-list-item"> {topic.slug} </li>
+                    </Link>
+                  );
+                })
+              : ""}
+          </ul>
         </li>
       </ul>
     </>

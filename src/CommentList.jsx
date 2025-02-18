@@ -35,6 +35,17 @@ function CommentList({ article }) {
           />
         );
       })}
+      {newComment ? (
+        <CommentCard
+          author={currentUser}
+          votes="0"
+          posted={new Date().toLocaleDateString("en-GB")}
+          body={newComment}
+          currentUser={currentUser}
+        />
+      ) : (
+        ""
+      )}
     </>
   );
 }
