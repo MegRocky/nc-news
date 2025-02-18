@@ -27,3 +27,7 @@ export const getUsersByUserName = (username) => {
     return res.data.user;
   });
 };
+
+export const patchVotesArticle = (articleId, votes) => {
+  return ncNewsApi.patch(`/articles/${articleId}`, { inc_votes: votes });
+};

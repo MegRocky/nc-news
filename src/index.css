@@ -111,6 +111,26 @@ article {
   grid-column: 1;
 }
 
+/* horizontal vote buttons */
+.horizontal-vote-buttons {
+  padding-inline: 3em;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.horizontal-vote-buttons > .upvote {
+  grid-column: 3;
+  grid-row: 1;
+}
+.horizontal-vote-buttons > .downvote {
+  grid-column: 1;
+  grid-row: 1;
+}
+.horizontal-vote-buttons > .vote-num {
+  grid-column: 2;
+  grid-row: 1;
+}
+
 /* nav */
 .nc-news-wordmark {
   font-family: "Monofett", serif;
