@@ -1,10 +1,11 @@
 import { getCommentsByArticle } from "./api";
 import { useState, useEffect } from "react";
 import CommentCard from "./CommentCard";
+import CommentForm from "./CommentForm";
 
 function CommentList({ article }) {
   const [comments, setComments] = useState([]);
-
+  const [newComment, setNewComment] = useState("");
   useEffect(() => {
     getCommentsByArticle(article)
       .then((comments) => {
@@ -13,11 +14,13 @@ function CommentList({ article }) {
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [newComment]);
 
   return (
     <>
       <h2>Comments</h2>
+      <h3>Leave a comment:</h3>
+      <CommentForm article={article} setNewComment={setNewComment} />
       {comments.map((comment) => {
         return (
           <CommentCard
