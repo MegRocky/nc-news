@@ -4,16 +4,6 @@ import CommentCard from "./CommentCard";
 
 function CommentList({ article }) {
   const [comments, setComments] = useState([]);
-  const [users, setUsers] = useState([]);
-  useEffect(() => {
-    getCommentsByArticle(article)
-      .then((comments) => {
-        return setComments(comments);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, [comments]);
 
   useEffect(() => {
     getCommentsByArticle(article)
@@ -23,7 +13,7 @@ function CommentList({ article }) {
       .catch((err) => {
         console.log(err);
       });
-  }, [comments]);
+  }, []);
 
   return (
     <>
