@@ -1,8 +1,14 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { getTopics } from "./api";
 
 function Header() {
   const [categoryDropdownY, setCategoryDropdown] = useState(false);
+  const [currentTopics, setCurrentTopics] = useState([]);
+
+  useEffect(() => {
+    getTopics().then((topics) => setCurrentTopics(topics));
+  }, []);
 
   return (
     <>
@@ -11,7 +17,22 @@ function Header() {
         <Link to="/articles">
           <li>All Articles</li>
         </Link>
-        <li>Topics ↓</li>
+        <li
+          onClick={() => {
+            setCategoryDropdown(!categoryDropdownY);
+          }}
+        >
+          Topics ↓
+          {categoryDropdownY
+            ? currentTopics.map((topic) => {
+                return (
+                  <Link to={`topics/${topic.slug} `} key={topic.slug}>
+                    {topic.slug}{" "}
+                  </Link>
+                );
+              })
+            : ""}
+        </li>
       </ul>
     </>
   );

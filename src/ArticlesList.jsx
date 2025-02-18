@@ -1,25 +1,28 @@
 import { useEffect, useState } from "react";
 import { getArticles } from "./api";
 import ArticleListEntry from "./ArticleListEntry";
+import { useParams } from "react-router-dom";
 
 function ArticlesList() {
   const [articleList, setArticleList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
+  const topicName = useParams().topic;
+
   useEffect(() => {
-    getArticles()
+    getArticles(topicName)
       .then((articles) => {
         setArticleList(articles);
       })
       .finally(() => {
         setIsLoading(false);
       });
-  });
+  }, [topicName]);
   return isLoading ? (
     <p>Loading...</p>
   ) : (
     <section>
-      <h1>Latest Articles</h1>
+      <h1>Latest {topicName} Articles</h1>
       {articleList.map((article) => {
         return (
           <ArticleListEntry
