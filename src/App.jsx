@@ -4,6 +4,7 @@ import ArticlesList from "./ArticlesList";
 import { Route, Routes } from "react-router-dom";
 import FullArticle from "./FullArticle";
 import Header from "./Header";
+import ErrorPage from "./ErrorPage";
 function App() {
   return (
     <>
@@ -13,6 +14,8 @@ function App() {
         <Route path="/articles" element={<ArticlesList />} />
         <Route path="/articles/:article_id" element={<FullArticle />} />
         <Route path="/topics/:topic" element={<ArticlesList />} />
+
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
     </>
   );

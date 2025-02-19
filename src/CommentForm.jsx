@@ -1,11 +1,11 @@
 import { postComment } from "./api";
 import { useState } from "react";
 
-function CommentForm({ article, setNewComment }) {
+function CommentForm({ article, setNewComment, currentUser }) {
   const [commentItem, setCommentItem] = useState("");
   const handleSubmit = (event) => {
     event.preventDefault();
-    postComment(article, "jessjelly", commentItem);
+    postComment(article, currentUser, commentItem);
     setNewComment(commentItem);
     setCommentItem("");
   };

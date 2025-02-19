@@ -21,7 +21,11 @@ function CommentList({ article }) {
     <>
       <h2>Comments</h2>
       <h3>Leave a comment:</h3>
-      <CommentForm article={article} setNewComment={setNewComment} />
+      <CommentForm
+        article={article}
+        setNewComment={setNewComment}
+        currentUser={currentUser}
+      />
       {comments.map((comment) => {
         return (
           <CommentCard

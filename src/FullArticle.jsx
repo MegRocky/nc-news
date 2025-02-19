@@ -3,6 +3,7 @@ import { getArticle, patchVotesArticle } from "./api";
 import { useState, useEffect } from "react";
 import CommentList from "./CommentList";
 import VoteButtons from "./VoteButtons";
+import ErrorPage from "./ErrorPage";
 
 function FullArticle() {
   const articleId = useParams().article_id;
@@ -11,6 +12,7 @@ function FullArticle() {
   const [voteNumber, setCurrentVoteNumber] = useState(0);
   const [voteChange, setVoteChange] = useState(0);
   const [voteErr, setVoteErr] = useState(false);
+  const [articleErr, setArticleErr] = useState(false);
 
   useEffect(() => {
     getArticle(articleId)
@@ -19,7 +21,7 @@ function FullArticle() {
         return setCurrentArticle(article);
       })
       .catch((err) => {
-        console.log(err);
+        setArticleErr(true);
       })
       .finally(() => {
         setIsLoading(false);
@@ -35,6 +37,8 @@ function FullArticle() {
 
   return isLoading ? (
     <p>Loading...</p>
+  ) : articleErr ? (
+    <ErrorPage location="article" />
   ) : (
     <>
       <h1>{currentArticle.title}</h1>
