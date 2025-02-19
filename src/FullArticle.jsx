@@ -30,7 +30,6 @@ function FullArticle() {
 
   useEffect(() => {
     patchVotesArticle(articleId, voteChange).catch((err) => {
-      console.log(err);
       setVoteErr(true);
     });
   }, [voteNumber]);
