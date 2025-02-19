@@ -4,10 +4,12 @@ import ArticleListEntry from "./ArticleListEntry";
 import { useParams } from "react-router-dom";
 import { useSearchParams } from "react-router-dom";
 import ArticleFiterSort from "./ArticleFilterSort";
+import ErrorPage from "./ErrorPage";
 function ArticlesList() {
   const [articleList, setArticleList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [searchParams, setSearchParams] = useSearchParams();
+  const [topicErr, setTopicErr] = useState(false);
   const sortByQuery = searchParams.get("sorted_by");
   const orderQuery = searchParams.get("order");
   const topicName = useParams().topic;
@@ -15,7 +17,13 @@ function ArticlesList() {
   useEffect(() => {
     getArticles(topicName, sortByQuery, orderQuery)
       .then((articles) => {
+        if (articles.length === 0) {
+          setTopicErr(true);
+        }
         setArticleList(articles);
+      })
+      .catch((err) => {
+        console.log(err);
       })
       .finally(() => {
         setIsLoading(false);
@@ -23,6 +31,8 @@ function ArticlesList() {
   }, [topicName, sortByQuery, orderQuery]);
   return isLoading ? (
     <p>Loading...</p>
+  ) : topicErr ? (
+    <ErrorPage location="topic" />
   ) : (
     <section>
       <h1>Latest {topicName} Articles</h1>
