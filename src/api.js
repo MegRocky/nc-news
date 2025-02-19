@@ -10,7 +10,6 @@ export const getArticles = (topic, sorted_by, order) => {
       params: { topic: topic, sorted_by: sorted_by, order: order },
     })
     .then((res) => {
-      console.log(res);
       return res.data.articles;
     });
 };
