@@ -57,7 +57,6 @@ function FullArticle() {
             voteNumber={voteNumber}
             setCurrentVoteNumber={setCurrentVoteNumber}
             setVoteChange={setVoteChange}
-            voteChange={voteChange}
           />
         )}
       </section>

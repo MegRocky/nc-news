@@ -42,6 +42,10 @@ export const patchVotesArticle = (articleId, votes) => {
   return ncNewsApi.patch(`/articles/${articleId}`, { inc_votes: votes });
 };
 
+export const patchVotesComment = (commentId, votes) => {
+  return ncNewsApi.patch(`/comments/${commentId}`, { inc_votes: votes });
+};
+
 export const postComment = (articleId, username, body) => {
   return ncNewsApi
     .post(`/articles/${articleId}/comments`, { username: username, body: body })
