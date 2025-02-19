@@ -110,6 +110,11 @@ article {
   max-width: 5em;
   grid-column: 1;
 }
+
+.vertical-vote-buttons {
+  grid-column: 3;
+  grid-row: 1;
+}
 /* optimistically hide comment card on delete */
 .hide {
   display: none;
@@ -132,6 +137,22 @@ article {
 .horizontal-vote-buttons > .vote-num {
   grid-column: 2;
   grid-row: 1;
+}
+
+/* vertical vote buttons */
+.vertical-vote-buttons {
+  padding-inline: 3em;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+.vertical-vote-buttons > .upvote {
+  grid-row: 1;
+}
+.vertical-vote-buttons > .downvote {
+  grid-row: 3;
+}
+.vertical-vote-buttons > .vote-num {
+  grid-row: 2;
 }
 
 /* nav */
