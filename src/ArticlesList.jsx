@@ -15,6 +15,8 @@ function ArticlesList() {
   const topicName = useParams().topic;
 
   useEffect(() => {
+    setIsLoading(true);
+    setTopicErr(false);
     getArticles(topicName, sortByQuery, orderQuery)
       .then((articles) => {
         if (articles.length === 0) {
@@ -29,33 +31,36 @@ function ArticlesList() {
         setIsLoading(false);
       });
   }, [topicName, sortByQuery, orderQuery]);
-  return isLoading ? (
-    <p>Loading...</p>
-  ) : topicErr ? (
-    <ErrorPage location="topic" />
-  ) : (
-    <section>
-      <h1>Latest {topicName} Articles</h1>
-      <ArticleFiterSort
-        setSearchParams={setSearchParams}
-        searchParams={searchParams}
-      />
-      {articleList.map((article) => {
-        return (
-          <ArticleListEntry
-            id={article.article_id}
-            key={article.article_id}
-            title={article.title}
-            topic={article.topic}
-            author={article.author}
-            votes={article.votes}
-            comments={article.comment_count}
-            posted={article.created_at}
-            img={article.article_img_url}
-          ></ArticleListEntry>
-        );
-      })}
-    </section>
-  );
+
+  if (isLoading) {
+    return <p>Loading...</p>;
+  } else if (topicErr) {
+    return <ErrorPage location="topic" />;
+  } else {
+    return (
+      <section>
+        <h1>Latest {topicName} Articles</h1>
+        <ArticleFiterSort
+          setSearchParams={setSearchParams}
+          searchParams={searchParams}
+        />
+        {articleList.map((article) => {
+          return (
+            <ArticleListEntry
+              id={article.article_id}
+              key={article.article_id}
+              title={article.title}
+              topic={article.topic}
+              author={article.author}
+              votes={article.votes}
+              comments={article.comment_count}
+              posted={article.created_at}
+              img={article.article_img_url}
+            ></ArticleListEntry>
+          );
+        })}
+      </section>
+    );
+  }
 }
 export default ArticlesList;
