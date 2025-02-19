@@ -28,23 +28,30 @@ function ArticleFiterSort({ setSearchParams, searchParams }) {
   return (
     <section>
       <form onSubmit={handleSubmit}>
-        <select
-          name="order"
-          onChange={(event) => setSelectedOrder(event.target.value)}
-          value={selectedOrder}
-        >
-          <option>Ascending</option>
-          <option>Decending</option>
-        </select>
-        <select
-          name="sorted_by"
-          onChange={(event) => setSelectedSortBy(event.target.value)}
-          value={selectedSortBy}
-        >
-          <option>Date Posted</option>
-          <option>Comment Count</option>
-          <option>Votes</option>
-        </select>
+        <label>
+          Sort by{" "}
+          <select
+            name="sorted_by"
+            onChange={(event) => setSelectedSortBy(event.target.value)}
+            value={selectedSortBy}
+          >
+            <option>Date Posted</option>
+            <option>Comment Count</option>
+            <option>Votes</option>
+          </select>
+        </label>
+        <label>
+          {" "}
+          Sort Direction{" "}
+          <select
+            name="order"
+            onChange={(event) => setSelectedOrder(event.target.value)}
+            value={selectedOrder}
+          >
+            <option>Ascending</option>
+            <option>Decending</option>
+          </select>
+        </label>
         <button type="submit">Apply Sort</button>
       </form>
     </section>
