@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import TopicList from "./TopicList";
 
-function ErrorPage({ location }) {
+function ErrorPage({ location, setTopicName }) {
   return (
     <>
       {" "}

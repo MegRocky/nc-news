@@ -40,9 +40,9 @@ function FullArticle() {
     <ErrorPage location="article" />
   ) : (
     <>
-      <h1>{currentArticle.title}</h1>
-      <h2>by {currentArticle.author}</h2>
-      <h3>Published on {currentArticle.created_at.split("T")[0]}</h3>
+      <h2>{currentArticle.title}</h2>
+      <h3>by {currentArticle.author}</h3>
+      <h4>Published on {currentArticle.created_at.split("T")[0]}</h4>
       <img className="article-img" src={currentArticle.article_img_url} />
 
       <article>{currentArticle.body} </article>

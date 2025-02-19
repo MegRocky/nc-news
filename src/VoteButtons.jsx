@@ -28,17 +28,29 @@ function VoteButtons({ voteNumber, setCurrentVoteNumber, setVoteChange }) {
     <>
       {" "}
       {voted === 1 ? (
-        <p className="upvote">+</p>
+        <p className="upvote" aria-label="upvote button deactivated">
+          +
+        </p>
       ) : (
-        <button className="upvote" onClick={handleUpVote}>
+        <button
+          className="upvote"
+          aria-label="upvote button ready to be clicked"
+          onClick={handleUpVote}
+        >
           +
         </button>
       )}
       <p className="vote-num">{voteNumber}</p>
       {voted === -1 ? (
-        <p className="downvote">-</p>
+        <p className="downvote" aria-label="upvote button deactivated">
+          -
+        </p>
       ) : (
-        <button className="downvote" onClick={handleDownVote}>
+        <button
+          className="downvote"
+          aria-label="downvote button ready to be clicked"
+          onClick={handleDownVote}
+        >
           -
         </button>
       )}
