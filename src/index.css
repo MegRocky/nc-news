@@ -89,7 +89,7 @@ article {
 /* comment card /w grid */
 .comment-card {
   display: grid;
-  grid-template-columns: 0.25fr 1fr 0.5fr;
+  grid-template-columns: 0.5fr 1fr 0.5fr;
   grid-auto-rows: minmax(10px, auto);
 
   grid-template-areas:
@@ -99,31 +99,24 @@ article {
   justify-items: center;
 }
 .comment-body {
-  /* grid-column: span 2;
-  grid-column-start: 2;
-  grid-row: 1; */
+  text-align: left;
   grid-area: comment;
 }
 .user-name-img {
   grid-area: img;
 }
-.comment-votes {
+.vertical-vote-buttons {
   grid-area: vote;
 }
 
 .comment-date {
   margin: 0;
-  grid-column: 2;
-  grid-row: 2;
+  grid-area: date;
 }
 .avatar-img {
   max-width: 5em;
 }
 
-.vertical-vote-buttons {
-  grid-column: 3;
-  grid-row: 1;
-}
 /* optimistically hide comment card on delete */
 .hide {
   display: none;
@@ -233,7 +226,7 @@ p.downvote {
 }
 .nav-list {
   display: flex;
-
+  margin-bottom: 0;
   padding: 1rem;
   padding-bottom: 0;
   list-style: none;
@@ -242,7 +235,18 @@ p.downvote {
   color: #1e2030;
   text-decoration: none;
 }
-.nav-list > *:hover {
+
+.nav-list > * {
+  margin-bottom: 0;
+  color: #1e2030;
+  padding: 0.5em;
+  padding-bottom: 1em;
+  margin-bottom: 0.5em;
+  text-decoration: none;
+}
+.nav-list > *:hover,
+.topics-with-dropdown {
+  margin-bottom: 0;
   background-color: #cad3f5;
   border-top-left-radius: 1em;
   border-top-right-radius: 1em;
@@ -251,10 +255,19 @@ p.downvote {
   text-decoration: underline;
 }
 
-.nav-list > * {
+.topics-dropdown {
+  margin-top: 0;
+  background-color: #cad3f5;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  list-style: none;
+  padding: 0;
+  gap: 1em;
+}
+
+.topic-list-item {
   color: #1e2030;
-  padding: 0.5em;
-  padding-bottom: 1em;
-  margin-bottom: 0.5em;
   text-decoration: none;
 }

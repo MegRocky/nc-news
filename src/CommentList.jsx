@@ -18,7 +18,7 @@ function CommentList({ article }) {
   }, [newComment]);
 
   return (
-    <>
+    <section>
       <h2>Comments</h2>
 
       <CommentForm
@@ -50,7 +50,7 @@ function CommentList({ article }) {
       ) : (
         ""
       )}
-    </>
+    </section>
   );
 }
 export default CommentList;
