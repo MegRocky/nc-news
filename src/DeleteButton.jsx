@@ -8,6 +8,10 @@ function DeleteButton({ commentId, setToBeDeleted, setDeleteErr }) {
     });
   };
 
-  return <button onClick={handleDelete}>Delete</button>;
+  return (
+    <button className="delete-button" onClick={handleDelete}>
+      Delete
+    </button>
+  );
 }
 export default DeleteButton;

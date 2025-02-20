@@ -122,62 +122,6 @@ article {
   display: none;
 }
 
-/* horizontal vote buttons */
-.horizontal-vote-buttons {
-  padding-inline: 3em;
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
-  justify-items: center;
-}
-
-.horizontal-vote-buttons > .upvote {
-  border-top-right-radius: 1em;
-  border-bottom-right-radius: 1em;
-  justify-self: left;
-  grid-column: 3;
-  grid-row: 1;
-}
-.horizontal-vote-buttons > .downvote {
-  justify-self: right;
-  border-top-left-radius: 1em;
-  border-bottom-left-radius: 1em;
-  grid-column: 1;
-  grid-row: 1;
-}
-.horizontal-vote-buttons > .vote-num {
-  background-color: #1e2030;
-  grid-column: 2;
-  grid-row: 1;
-  padding-block: 1.2em;
-}
-
-/* vertical vote buttons */
-.vertical-vote-buttons {
-  margin: 0;
-  display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
-  align-items: center;
-  justify-items: center;
-}
-
-.vertical-vote-buttons > .upvote {
-  border-top-left-radius: 1em;
-  border-top-right-radius: 1em;
-  grid-row: 1;
-}
-.vertical-vote-buttons > .downvote {
-  border-bottom-left-radius: 1em;
-  border-bottom-right-radius: 1em;
-  grid-row: 3;
-}
-.vertical-vote-buttons > .vote-num {
-  background-color: #24273a;
-  padding-block: 1em;
-
-  grid-row: 2;
-}
-
 /* buttons general */
 
 button {
@@ -217,6 +161,82 @@ p.downvote {
   display: inline-block;
   background-color: #1e2030;
   padding-inline: 2em;
+}
+
+.delete-button {
+  background-color: #ee99a0;
+  padding: 10px;
+  color: #1e2030;
+}
+.delete-button:hover {
+  background-color: #cad3f5;
+  border: 2px solid #ee99a0;
+  padding: 8px;
+  color: #1e2030;
+}
+
+/* horizontal vote buttons */
+.horizontal-vote-buttons {
+  padding-inline: 3em;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  justify-items: center;
+}
+
+.horizontal-vote-buttons > .upvote {
+  border-top-right-radius: 1em;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 1em;
+  justify-self: left;
+  grid-column: 3;
+  grid-row: 1;
+}
+.horizontal-vote-buttons > .downvote {
+  justify-self: right;
+  border-top-left-radius: 1em;
+  border-bottom-left-radius: 1em;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  grid-column: 1;
+  grid-row: 1;
+}
+.horizontal-vote-buttons > .vote-num {
+  background-color: #1e2030;
+  grid-column: 2;
+  grid-row: 1;
+  padding-block: 1.2em;
+}
+
+/* vertical vote buttons */
+.vertical-vote-buttons {
+  margin: 0;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+}
+
+.vertical-vote-buttons > .upvote {
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  grid-row: 1;
+}
+.vertical-vote-buttons > .downvote {
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  grid-row: 3;
+}
+.vertical-vote-buttons > .vote-num {
+  background-color: #24273a;
+  padding-block: 1em;
+
+  grid-row: 2;
 }
 
 /* input colours */
