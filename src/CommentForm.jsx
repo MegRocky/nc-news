@@ -14,15 +14,17 @@ function CommentForm({ article, setNewComment, currentUser }) {
     <form className="comment-form" onSubmit={handleSubmit} title="add comment">
       <label htmlFor="commentArea">
         <h3> Leave a comment:</h3>
-        <textarea
-          required
-          value={commentItem}
-          id="commentArea"
-          onChange={(event) => setCommentItem(event.target.value)}
-        />
       </label>
+      <textarea
+        required
+        value={commentItem}
+        id="commentArea"
+        onChange={(event) => setCommentItem(event.target.value)}
+      />
 
-      <button type="submit">Send</button>
+      <button type="submit" className="comment-submit">
+        Send
+      </button>
     </form>
   );
 }

@@ -27,7 +27,7 @@ function ArticleFiterSort({ setSearchParams, searchParams }) {
 
   return (
     <section>
-      <form onSubmit={handleSubmit}>
+      <form className="sort-form" onSubmit={handleSubmit}>
         <label>
           Sort by{" "}
           <select

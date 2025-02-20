@@ -183,6 +183,8 @@ article {
 button {
   background-color: #5b6078;
   border-style: none;
+  padding: 6px;
+  border-radius: 1em;
 }
 
 button.upvote,
@@ -204,8 +206,7 @@ button.downvote {
   background-color: #363a4f;
 }
 
-button.upvote:hover,
-button.downvote:hover {
+button:hover {
   background-color: #cad3f5;
   color: #24273a;
 }
@@ -216,6 +217,70 @@ p.downvote {
   display: inline-block;
   background-color: #1e2030;
   padding-inline: 2em;
+}
+
+/* input colours */
+textarea,
+input,
+select {
+  color: #1e2030;
+  border: 2px solid #5b6078;
+  background-color: #8087a2;
+  border-radius: 0.5em;
+}
+
+/* article sort */
+.sort-form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin: 0.5em;
+}
+.sort-form > label,
+.sort-form > button {
+  margin-right: 1em;
+  margin-top: 0.5em;
+}
+
+/* comment section */
+.comment-form {
+  width: 80%;
+  margin-inline: 10%;
+  margin-bottom: 2em;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.comment-form > label {
+  grid-column: span 2;
+}
+
+.comment-submit {
+  border-radius: 1em;
+  height: 4em;
+  width: 7em;
+  grid-row: 2;
+  grid-column: 2;
+}
+
+textarea {
+  margin-right: 1em;
+  width: 90%;
+  height: 5rem;
+  grid-row: 2;
+  resize: none;
+  justify-self: center;
+}
+
+.comments-title {
+  padding: 1em;
+  margin-top: 1em;
+  margin-bottom: 0;
+  background-color: #1e2030;
 }
 
 /* nav */

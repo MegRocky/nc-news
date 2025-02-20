@@ -19,7 +19,7 @@ function CommentList({ article }) {
 
   return (
     <section>
-      <h2>Comments</h2>
+      <h2 className="comments-title">Comments</h2>
 
       <CommentForm
         article={article}
