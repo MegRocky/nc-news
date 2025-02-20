@@ -43,7 +43,11 @@ function FullArticle() {
       <h2>{currentArticle.title}</h2>
       <h3>by {currentArticle.author}</h3>
       <h4>Published on {currentArticle.created_at.split("T")[0]}</h4>
-      <img className="article-img" src={currentArticle.article_img_url} />
+      <img
+        className="article-img"
+        src={currentArticle.article_img_url}
+        alt={`image for article ${currentArticle.title}`}
+      />
 
       <article>{currentArticle.body} </article>
       <h4>Rating</h4>
