@@ -33,7 +33,11 @@ function CommentCard({ author, votes, posted, body, currentUser, id }) {
       <section className={`comment-card${toBeDeleted === true ? " hide" : ""}`}>
         <div className="user-name-img">
           {" "}
-          <img className="avatar-img" src={commentAuthor.avatar_url} />
+          <img
+            className="avatar-img"
+            alt={`user avatar image for ${author}`}
+            src={commentAuthor.avatar_url}
+          />
           <p className="comment-username">{author}</p>
         </div>
         <p className="comment-body">{body}</p>

@@ -20,7 +20,7 @@ function CommentList({ article }) {
   return (
     <>
       <h2>Comments</h2>
-      <h3>Leave a comment:</h3>
+
       <CommentForm
         article={article}
         setNewComment={setNewComment}

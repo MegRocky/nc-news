@@ -204,6 +204,12 @@ button.upvote,
 button.downvote {
   height: 4em;
 }
+button.upvote {
+  background-color: #5b6078;
+}
+button.downvote {
+  background-color: #363a4f;
+}
 
 button.upvote:hover,
 button.downvote:hover {
@@ -215,13 +221,15 @@ p.upvote,
 p.downvote {
   margin: 0;
   display: inline-block;
-  background-color: #24273a;
+  background-color: #1e2030;
   padding-inline: 2em;
 }
 
 /* nav */
 .nc-news-wordmark {
   font-family: "Monofett", serif;
+  text-decoration: none;
+  color: #cad3f5;
 }
 .nav-list {
   display: flex;

@@ -8,7 +8,11 @@ function Header() {
 
   return (
     <>
-      <h1 className="nc-news-wordmark">Northcoders News</h1>
+      <h1 className="nc-news-wordmark">
+        <Link className="nc-news-wordmark" to="/">
+          Northcoders News
+        </Link>
+      </h1>
       <ul className="nav-list">
         <Link to="/articles">
           <li>All Articles</li>

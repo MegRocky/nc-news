@@ -13,13 +13,15 @@ function ArticleListEntry({
   return (
     <>
       <article className="article-list-item">
-        <img src={img} />
+        <img src={img} alt={`image for article ${title}`} />
         <span>
           {" "}
           <Link to={`/articles/${id}`}>
             <h3>{title}</h3>
           </Link>
-          <h4>Topic: {topic}</h4>
+          <h4>
+            Topic: <Link to={`/topics/${topic}`}>{topic}</Link>
+          </h4>
           <h5>By {author}</h5>
         </span>
         <p className="ratings-comments">
