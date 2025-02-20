@@ -14,15 +14,20 @@ function ArticlesList() {
   const orderQuery = searchParams.get("order");
   const topicName = useParams().topic;
 
+  const [page, setPage] = useState(1);
+  const [totalCount, setTotalCount] = useState(null);
+
   useEffect(() => {
     setIsLoading(true);
     setTopicErr(false);
-    getArticles(topicName, sortByQuery, orderQuery)
-      .then((articles) => {
+    getArticles(topicName, sortByQuery, orderQuery, page)
+      .then(({ articles, total_count }) => {
         if (articles.length === 0) {
           setTopicErr(true);
         }
+
         setArticleList(articles);
+        setTotalCount(total_count);
       })
       .catch((err) => {
         console.log(err);
@@ -30,7 +35,7 @@ function ArticlesList() {
       .finally(() => {
         setIsLoading(false);
       });
-  }, [topicName, sortByQuery, orderQuery]);
+  }, [topicName, sortByQuery, orderQuery, page]);
 
   if (isLoading) {
     return <p>Loading...</p>;
@@ -43,6 +48,7 @@ function ArticlesList() {
         <ArticleFiterSort
           setSearchParams={setSearchParams}
           searchParams={searchParams}
+          setPage={setPage}
         />
         {articleList.map((article) => {
           return (
@@ -59,6 +65,18 @@ function ArticlesList() {
             ></ArticleListEntry>
           );
         })}
+        <button
+          onClick={() => setPage((currentPage) => currentPage - 1)}
+          disabled={page === 1}
+        >
+          Previous Page
+        </button>
+        <button
+          onClick={() => setPage((currentPage) => currentPage + 1)}
+          disabled={10 * page >= totalCount}
+        >
+          Next Page
+        </button>
       </section>
     );
   }

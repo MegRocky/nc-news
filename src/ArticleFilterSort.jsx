@@ -1,11 +1,12 @@
 import { useState } from "react";
 
-function ArticleFiterSort({ setSearchParams, searchParams }) {
+function ArticleFiterSort({ setSearchParams, searchParams, setPage }) {
   const [selectedOrder, setSelectedOrder] = useState("Decending");
   const [selectedSortBy, setSelectedSortBy] = useState("Date Posted");
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    setPage(1);
     const orderDirection = selectedOrder === "Ascending" ? "asc" : "desc";
     let sortColumn;
     switch (selectedSortBy) {
