@@ -13,7 +13,9 @@ function ErrorPage({ location, setTopicName }) {
       {location === "topic" ? (
         <>
           <p>See some valid topics here </p>
-          <TopicList />
+          <ul>
+            <TopicList />
+          </ul>
         </>
       ) : (
         <Link to="/">See all of our articles here</Link>

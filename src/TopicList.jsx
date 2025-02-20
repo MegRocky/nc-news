@@ -11,7 +11,7 @@ function TopicList() {
   }, []);
 
   return (
-    <ul>
+    <>
       {currentTopics.map((topic) => {
         return (
           <Link to={`/topics/${topic.slug} `} key={topic.slug}>
@@ -19,7 +19,7 @@ function TopicList() {
           </Link>
         );
       })}
-    </ul>
+    </>
   );
 }
 
