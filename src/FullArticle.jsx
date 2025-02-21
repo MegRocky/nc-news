@@ -5,7 +5,7 @@ import CommentList from "./CommentList";
 import VoteButtons from "./VoteButtons";
 import ErrorPage from "./ErrorPage";
 
-function FullArticle() {
+function FullArticle({ users }) {
   const articleId = useParams().article_id;
   const [currentArticle, setCurrentArticle] = useState({});
   const [isLoading, setIsLoading] = useState(true);
@@ -64,7 +64,7 @@ function FullArticle() {
           />
         )}
       </section>
-      <CommentList article={articleId} />
+      <CommentList article={articleId} users={users} />
     </>
   );
 }

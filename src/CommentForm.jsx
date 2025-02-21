@@ -1,7 +1,10 @@
 import { postComment } from "./api";
 import { useState } from "react";
+import { useContext } from "react";
+import { CurrentUserContext } from "./LoggedInUser";
 
-function CommentForm({ article, setNewComment, currentUser }) {
+function CommentForm({ article, setNewComment }) {
+  const { currentUser, setCurrentUser } = useContext(CurrentUserContext);
   const [commentItem, setCommentItem] = useState("");
   const handleSubmit = (event) => {
     event.preventDefault();

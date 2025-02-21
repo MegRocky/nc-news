@@ -44,7 +44,7 @@ function ArticlesList() {
   } else {
     return (
       <section>
-        <h1>Latest {topicName} Articles</h1>
+        <h2>Latest {topicName} Articles</h2>
         <ArticleFiterSort
           setSearchParams={setSearchParams}
           searchParams={searchParams}
@@ -65,13 +65,16 @@ function ArticlesList() {
             ></ArticleListEntry>
           );
         })}
+
         <button
+          className="previous-page"
           onClick={() => setPage((currentPage) => currentPage - 1)}
           disabled={page === 1}
         >
           Previous Page
         </button>
         <button
+          className="next-page"
           onClick={() => setPage((currentPage) => currentPage + 1)}
           disabled={10 * page >= totalCount}
         >

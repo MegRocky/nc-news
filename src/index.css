@@ -175,6 +175,23 @@ p.downvote {
   color: #1e2030;
 }
 
+/* pagination buttons */
+.previous-page,
+.next-page {
+  margin-block: 2em;
+  margin-inline: 1em;
+  padding: 1em;
+}
+
+/* login form */
+.login-form {
+  margin-bottom: 1em;
+}
+
+.login-submit {
+  margin-left: 1em;
+}
+
 /* horizontal vote buttons */
 .horizontal-vote-buttons {
   padding-inline: 3em;
@@ -206,7 +223,8 @@ p.downvote {
   background-color: #1e2030;
   grid-column: 2;
   grid-row: 1;
-  padding-block: 1.2em;
+  border-radius: 1em;
+  padding-block: 1.5em;
 }
 
 /* vertical vote buttons */
@@ -235,7 +253,8 @@ p.downvote {
 .vertical-vote-buttons > .vote-num {
   background-color: #24273a;
   padding-block: 1em;
-
+  width: 7em;
+  border-radius: 1em;
   grid-row: 2;
 }
 
@@ -256,6 +275,7 @@ select {
   align-items: center;
   justify-content: center;
   margin: 0.5em;
+  margin-bottom: 1em;
 }
 .sort-form > label,
 .sort-form > button {
@@ -308,6 +328,7 @@ textarea {
   font-family: "Monofett", serif;
   text-decoration: none;
   color: #cad3f5;
+  width: 100%;
 }
 .nav-list {
   display: flex;
@@ -340,6 +361,12 @@ textarea {
   text-decoration: underline;
 }
 
+.logout-link {
+  text-decoration: underline;
+
+  margin-left: 3em;
+}
+
 .topics-dropdown {
   margin-top: 0;
   background-color: #cad3f5;
@@ -354,5 +381,10 @@ textarea {
 
 .topic-list-item {
   color: #1e2030;
-  text-decoration: none;
+}
+
+.error-list {
+  background-color: #cad3f5;
+  list-style: none;
+  padding: 0;
 }

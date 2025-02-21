@@ -13,7 +13,7 @@ function ErrorPage({ location, setTopicName }) {
       {location === "topic" ? (
         <>
           <p>See some valid topics here </p>
-          <ul>
+          <ul className="error-list">
             <TopicList />
           </ul>
         </>
