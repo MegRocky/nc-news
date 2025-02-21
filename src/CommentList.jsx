@@ -57,12 +57,16 @@ function CommentList({ article, users, totalCount }) {
       ) : (
         ""
       )}
-      <PageButtons
-        totalCount={totalCount}
-        setPage={setPage}
-        page={page}
-        limit={5}
-      />
+      {totalCount < 5 ? (
+        ""
+      ) : (
+        <PageButtons
+          totalCount={totalCount}
+          setPage={setPage}
+          page={page}
+          limit={5}
+        />
+      )}
     </section>
   );
 }
