@@ -32,19 +32,21 @@ function ArticleFiterSort({ setSearchParams, searchParams, setPage }) {
         <label>
           Sort by{" "}
           <select
+            className="sort-select"
             name="sorted_by"
             onChange={(event) => setSelectedSortBy(event.target.value)}
             value={selectedSortBy}
           >
             <option>Date Posted</option>
             <option>Comment Count</option>
-            <option>Votes</option>
+            <option>Rating</option>
           </select>
         </label>
         <label>
           {" "}
           Sort Direction{" "}
           <select
+            className="sort-select"
             name="order"
             onChange={(event) => setSelectedOrder(event.target.value)}
             value={selectedOrder}

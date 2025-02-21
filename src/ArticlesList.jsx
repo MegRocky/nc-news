@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import { useSearchParams } from "react-router-dom";
 import ArticleFiterSort from "./ArticleFilterSort";
 import ErrorPage from "./ErrorPage";
+import PageButtons from "./PageButtons";
 function ArticlesList() {
   const [articleList, setArticleList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -25,7 +26,6 @@ function ArticlesList() {
         if (articles.length === 0) {
           setTopicErr(true);
         }
-
         setArticleList(articles);
         setTotalCount(total_count);
       })
@@ -65,8 +65,13 @@ function ArticlesList() {
             ></ArticleListEntry>
           );
         })}
-
-        <button
+        <PageButtons
+          page={page}
+          setPage={setPage}
+          totalCount={totalCount}
+          limit={10}
+        />
+        {/* <button
           className="previous-page"
           onClick={() => setPage((currentPage) => currentPage - 1)}
           disabled={page === 1}
@@ -79,7 +84,7 @@ function ArticlesList() {
           disabled={10 * page >= totalCount}
         >
           Next Page
-        </button>
+        </button> */}
       </section>
     );
   }

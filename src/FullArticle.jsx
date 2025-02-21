@@ -14,7 +14,7 @@ function FullArticle({ users }) {
   const [voteChange, setVoteChange] = useState(0);
   const [voteErr, setVoteErr] = useState(false);
   const [articleErr, setArticleErr] = useState(false);
-
+  console.log(currentArticle.comment_count);
   useEffect(() => {
     getArticle(articleId)
       .then((article) => {
@@ -65,7 +65,11 @@ function FullArticle({ users }) {
           />
         )}
       </section>
-      <CommentList article={articleId} users={users} />
+      <CommentList
+        article={articleId}
+        users={users}
+        totalCount={currentArticle.comment_count}
+      />
     </>
   );
 }

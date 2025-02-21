@@ -10,7 +10,6 @@ export const getArticles = (topic, sorted_by, order, page) => {
       params: { topic: topic, sorted_by: sorted_by, order: order, p: page },
     })
     .then((res) => {
-      console.log(res);
       return res.data;
     });
 };
@@ -21,10 +20,12 @@ export const getArticle = (articleId) => {
   });
 };
 
-export const getCommentsByArticle = (articleId) => {
-  return ncNewsApi.get(`/articles/${articleId}/comments`).then((res) => {
-    return res.data.comments;
-  });
+export const getCommentsByArticle = (articleId, page) => {
+  return ncNewsApi
+    .get(`/articles/${articleId}/comments`, { params: { p: page, limit: 5 } })
+    .then((res) => {
+      return res.data.comments;
+    });
 };
 
 export const getTopics = () => {

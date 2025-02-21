@@ -129,6 +129,7 @@ button {
   border-style: none;
   padding: 6px;
   border-radius: 1em;
+  padding: 0.5em;
 }
 
 button.upvote,
@@ -283,6 +284,10 @@ select {
   margin-top: 0.5em;
 }
 
+.sort-select {
+  font-size: medium;
+}
+
 /* comment section */
 .comment-form {
   width: 80%;
@@ -381,6 +386,7 @@ textarea {
 
 .topic-list-item {
   color: #1e2030;
+  padding-block: 1em;
 }
 
 .error-list {

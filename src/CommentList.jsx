@@ -5,21 +5,23 @@ import CommentForm from "./CommentForm";
 import { useContext } from "react";
 import { CurrentUserContext } from "./LoggedInUser";
 import LoginForm from "./LoginForm";
+import PageButtons from "./PageButtons";
 
-function CommentList({ article, users }) {
+function CommentList({ article, users, totalCount }) {
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState("");
+  const [page, setPage] = useState(1);
   const { currentUser, setCurrentUser } = useContext(CurrentUserContext);
   useEffect(() => {
-    getCommentsByArticle(article)
+    getCommentsByArticle(article, page)
       .then((comments) => {
         return setComments(comments);
       })
       .catch((err) => {
         console.log(err);
       });
-  }, [newComment]);
-
+  }, [newComment, page]);
+  console.log(page);
   return (
     <section>
       <h2 className="comments-title">Comments</h2>
@@ -55,6 +57,12 @@ function CommentList({ article, users }) {
       ) : (
         ""
       )}
+      <PageButtons
+        totalCount={totalCount}
+        setPage={setPage}
+        page={page}
+        limit={5}
+      />
     </section>
   );
 }
