@@ -227,6 +227,10 @@ p.downvote {
   border-radius: 1em;
   padding-block: 1.5em;
 }
+.horizontal-vote-buttons > p.upvote,
+.horizontal-vote-buttons > p.downvote {
+  background-color: #24273a;
+}
 
 /* vertical vote buttons */
 .vertical-vote-buttons {
