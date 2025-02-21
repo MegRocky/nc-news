@@ -4,7 +4,20 @@ import { getTopics } from "./api";
 import { useNavigate } from "react-router-dom";
 
 function TopicList() {
-  const [currentTopics, setCurrentTopics] = useState([]);
+  const [currentTopics, setCurrentTopics] = useState([
+    {
+      slug: "coding",
+      description: "Code is love, code is life",
+    },
+    {
+      slug: "football",
+      description: "FOOTIE!",
+    },
+    {
+      slug: "cooking",
+      description: "Hey good looking, what you got cooking?",
+    },
+  ]);
 
   useEffect(() => {
     getTopics().then((topics) => setCurrentTopics(topics));

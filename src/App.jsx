@@ -7,6 +7,7 @@ import Header from "./Header";
 import ErrorPage from "./ErrorPage";
 import LoginForm from "./LoginForm";
 import { getUsers } from "./api";
+
 function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [users, setUsers] = useState([]);
@@ -18,6 +19,7 @@ function App() {
       .catch(console.log)
       .finally(() => setIsLoading(false));
   }, []);
+
   return (
     <>
       <Header />
