@@ -7,6 +7,7 @@ import Header from "./Header";
 import ErrorPage from "./ErrorPage";
 import LoginForm from "./LoginForm";
 import { getUsers } from "./api";
+import Footer from "./Footer";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -34,6 +35,7 @@ function App() {
         <Route path="/login" element={<LoginForm users={users} />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
+      <Footer />
     </>
   );
 }

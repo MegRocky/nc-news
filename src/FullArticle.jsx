@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import CommentList from "./CommentList";
 import VoteButtons from "./VoteButtons";
 import ErrorPage from "./ErrorPage";
+import Footer from "./Footer";
 
 function FullArticle({ users }) {
   const articleId = useParams().article_id;
